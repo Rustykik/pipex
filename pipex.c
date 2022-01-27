@@ -63,7 +63,7 @@ static void	pipes_exec(t_pipex *pipex, char *cmd)
 		close(fd[1]);
 		dup2(fd[0], 0);
 		close(fd[0]);
-		waitpid(pid, &wstatus, 0);
+		waitpid(pid, &wstatus, WNOHANG);
 		if (WEXITSTATUS(wstatus) == EXIT_FAILURE)
 			error_exit_execute(pipex);
 	}

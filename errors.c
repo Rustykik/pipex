@@ -38,5 +38,5 @@ void	error_exit_execute(t_pipex *pipex)
 		free(pipex->here_doc_line);
 	free(pipex);
 	ft_putstr_fd("pipex: command not found\n", 2);
-	exit(-1);
+	exit(127);
 }
